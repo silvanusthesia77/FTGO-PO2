@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/davecgh/go-spew/spew"
 )
@@ -10,7 +11,8 @@ func main() {
 	// learnVariable()
 	// learnTypeData()
 	// constAndOperator()
-	learnArray()
+	// learnArray()
+	learnCondition()
 }
 
 func learnVariable() {
@@ -63,18 +65,65 @@ func constAndOperator() {
 	fmt.Println(h || j)
 }
 func learnArray() {
-	number := [3]int{22, 44, 66}
-	num := []int{100, 300, 500, 700}
-	arry := [5]string{}
-	arry[0] = "wanus"
-	arry[1] = "thby"
-	arry[2] = "reza"
-	arry[3] = "lukas"
-	for _, v := range arry {
-		spew.Dump(v)
+	// number := [3]int{22, 44, 66}
+	// num := []int{100, 300, 500, 700}
+	arry := [3]int{1, 2, 3}
+	arry[2] = 50
+	// spew.Dump(arry)
+	for k, v := range arry {
+		fmt.Println(k, v)
 	}
-	spew.Dump(num)
-	spew.Dump(number)
+	// spew.Dump(num)
+	// spew.Dump(number)
+
+	skl := [2][3]string{{"SD 15", "SD 14", "SD YPK"}, {"SMP 2", "SMA 1", "UNSIA"}}
+	for _, v := range skl {
+		fmt.Println("\n", strings.Repeat("=", 55), "\n")
+		for _, hasil := range v {
+			fmt.Println(hasil)
+		}
+	}
+
+	// slice
+
+	fmt.Println("\n", strings.Repeat("=", 55), "\n")
+
+	animal := []string{"Dog", "Pig", "Bird"}
+	// menambahkan
+	animal = append(animal, "Kanguru")
+
+	for _, v := range animal {
+		fmt.Println(v)
+	}
+
+	// copy
+	fruit1 := []string{"Mangga", "Pepaya", "Rujak"}
+	fruit2 := []string{"Nasi", "ikan", "sayur"}
+	fmt.Println("insdex :", fruit1[1:])
+	fruit1 = append(fruit1, fruit2...)
+	fmt.Println("Hasil Fruit1 :", fruit1)
+	hasl := copy(fruit1, fruit2)
+	fmt.Println(hasl)
 }
 
-// 1:15 jam
+func learnCondition() {
+	a := true
+	b := false
+
+	if a == b {
+		fmt.Println("Welcome")
+	} else {
+		fmt.Println("Kembali Lain waktu")
+	}
+
+	currentYear := 2021
+	age := currentYear - 2000
+
+	if age <= 17 {
+		fmt.Println("Anda Belum bisa cetak KTP")
+	} else {
+		fmt.Println("Silahkan Cetak KTP")
+	}
+}
+
+// 2:00 jam
