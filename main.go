@@ -12,7 +12,9 @@ func main() {
 	// learnTypeData()
 	// constAndOperator()
 	// learnArray()
-	learnCondition()
+	// learnCondition()
+	// learnLooping()
+	greet("wanus", 22)
 }
 
 func learnVariable() {
@@ -107,23 +109,89 @@ func learnArray() {
 }
 
 func learnCondition() {
-	a := true
-	b := false
+	// a := true
+	// b := false
 
-	if a == b {
-		fmt.Println("Welcome")
+	// if a == b {
+	// 	fmt.Println("Welcome")
+	// } else {
+	// 	fmt.Println("Kembali Lain waktu")
+	// }
+
+	currentYear := 2026
+	age := currentYear - 2008
+
+	if age < 17 {
+		fmt.Println("not Allow to get driver license")
+	} else if age < 20 {
+		fmt.Println("your age is 17 more and < 20")
 	} else {
-		fmt.Println("Kembali Lain waktu")
+		fmt.Println("Allow to get driver license")
 	}
 
-	currentYear := 2021
-	age := currentYear - 2000
+	nilai := 6
 
-	if age <= 17 {
-		fmt.Println("Anda Belum bisa cetak KTP")
-	} else {
-		fmt.Println("Silahkan Cetak KTP")
+	switch nilai {
+	case 9:
+		fmt.Println("Good Job")
+	case 7:
+		fmt.Println("Not Bad")
+	case 6:
+		fmt.Println("Try Again")
+	default:
+		fmt.Println("Semangat Coba lagi Nanti")
+
+	}
+
+	score := 8
+
+	switch {
+	case score == 8:
+		fmt.Println("Good Job")
+	case (score < 7) && (score > 5):
+		fmt.Println("Not Bad")
+	default:
+		{
+			fmt.Println("Belum Sesuai Target")
+			fmt.Println("Jangan berkecil Hati, Kembali Lagi Nanti")
+		}
+
+	}
+
+}
+func learnLooping() {
+	for angka := 1; angka <= 5; angka++ {
+		fmt.Println(angka)
+	}
+	fmt.Println("\n", strings.Repeat("=", 55), "\n")
+	for _, names := range []string{"thoby", "reza", "Luis", "Junior"} {
+		fmt.Println(names)
+	}
+
+	num := 0
+
+	for num < 5 {
+		num++
+		fmt.Println("nilai :", num)
+	}
+
+	fmt.Println("\n", strings.Repeat("=", 55), "\n")
+
+	i := 0
+
+	for {
+		i++
+		if i%2 != 0 {
+			continue
+		}
+		fmt.Println("Nilai :", i)
+		if i == 8 {
+			break
+		}
 	}
 }
+func greet(name string, age int) {
+	fmt.Printf("Halo, nama saya %s , saya berusia %d\n", name, age)
+}
 
-// 2:00 jam
+// 2:27 jam
