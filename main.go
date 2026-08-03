@@ -14,7 +14,11 @@ func main() {
 	// learnArray()
 	// learnCondition()
 	// learnLooping()
-	greet("wanus", 22)
+	msg, repons := greet("Junior", 20)
+	fmt.Println(msg, repons)
+	fmt.Println("\n", strings.Repeat("=", 50), "\n")
+	radical([]int{20, 22, 88}, "luiz", "arthur", "kandamy")
+
 }
 
 func learnVariable() {
@@ -190,8 +194,19 @@ func learnLooping() {
 		}
 	}
 }
-func greet(name string, age int) {
-	fmt.Printf("Halo, nama saya %s , saya berusia %d\n", name, age)
+func greet(name string, age int) (msg string, reponse string) {
+	msg = fmt.Sprintf("halo saya %s berusia %d", name, age)
+	return msg, ", Selamat Bergabung Bersama Barito Putra"
+}
+
+func radical(grade []int, names ...string) {
+	for _, v := range grade {
+		fmt.Println(v)
+	}
+	fmt.Println("\n", strings.Repeat("#", 30), "\n")
+	for _, name := range names {
+		fmt.Println(name)
+	}
 }
 
 // 2:27 jam
