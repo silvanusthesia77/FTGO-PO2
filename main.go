@@ -7,6 +7,13 @@ import (
 	"github.com/davecgh/go-spew/spew"
 )
 
+// dari funct latihan
+type person struct {
+	name  string
+	age   int
+	hobby string
+}
+
 func main() {
 	// learnVariable()
 	// learnTypeData()
@@ -14,10 +21,13 @@ func main() {
 	// learnArray()
 	// learnCondition()
 	// learnLooping()
-	msg, repons := greet("Junior", 20)
-	fmt.Println(msg, repons)
-	fmt.Println("\n", strings.Repeat("=", 50), "\n")
-	radical([]int{20, 22, 88}, "luiz", "arthur", "kandamy")
+	// msg, repons := greet("Junior", 20)
+	// fmt.Println(msg, repons)
+	// fmt.Println("\n", strings.Repeat("=", 50), "\n")
+	// radical([]int{20, 22, 88}, "luiz", "arthur", "kandamy")
+	// learnMap()
+	// latihan()
+	ponter()
 
 }
 
@@ -209,4 +219,46 @@ func radical(grade []int, names ...string) {
 	}
 }
 
-// 2:27 jam
+func learnMap() {
+	people := map[string]int{}
+	people["thby"] = 20
+	people["luiz"] = 22
+	people["reza"] = 25
+
+	for person, v := range people {
+		fmt.Println(person, v)
+	}
+}
+func latihan() {
+	people := map[string]person{}
+	people["junior"] = person{age: 22, hobby: "memcaa"}
+	people["arthur"] = person{age: 20, hobby: "lari"}
+
+	for name, age := range people {
+		fmt.Println(name, age)
+
+	}
+}
+func ponter() {
+	first := 4
+	var second *int = &first
+	fmt.Println(first)
+	fmt.Println(&first)
+	fmt.Println(*second)
+	fmt.Println(second)
+
+	var name string = "thby"
+	var rename *string = &name
+	fmt.Println(name)
+	fmt.Println(&name)
+	fmt.Println(*rename)
+	fmt.Println(rename)
+
+	fmt.Println("\n", strings.Repeat("=", 50), "\n")
+
+	*rename = "Luiz"
+	fmt.Println(*rename)
+	fmt.Println(rename)
+}
+
+// 30 jam (struct)
