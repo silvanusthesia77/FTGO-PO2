@@ -27,7 +27,8 @@ func main() {
 	// radical([]int{20, 22, 88}, "luiz", "arthur", "kandamy")
 	// learnMap()
 	// latihan()
-	ponter()
+	// ponter()
+	struc()
 
 }
 
@@ -260,5 +261,23 @@ func ponter() {
 	fmt.Println(*rename)
 	fmt.Println(rename)
 }
+func struc() {
+	var s1 person
+	s1.name = "wanus"
+	s1.age = 22
+	s1.hobby = "sport"
 
-// 30 jam (struct)
+	fmt.Println("Nama :", s1.name)
+	fmt.Println("Age :", s1.age)
+	fmt.Println("Hobby :", s1.hobby)
+
+	emp2 := person{
+		name:  "Luiz",
+		age:   23,
+		hobby: "Nurse",
+	}
+	fmt.Println(emp2)
+
+}
+
+// 40 jam (struct)
